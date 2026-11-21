@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TTTM2113 Web Development Deliverables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --void: #070a14;
+      --panel: rgba(255, 255, 255, .04);
+      --line: rgba(120, 220, 255, .18);
+      --cyan: #3de6ff;
+      --violet: #8b5cf6;
+      --gold: #f2c14e;
+      --text: #e6ecff;
+      --muted: #8f9bbd;
+    }
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: "Manrope", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .display-font { font-family: "Unbounded", "Manrope", sans-serif; }
+    .text-body-secondary { color: var(--muted) !important; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      padding: 6rem 0 5rem;
+      text-align: center;
+      background:
+        radial-gradient(60% 60% at 50% 0%, rgba(139, 92, 246, .35), transparent 70%),
+        radial-gradient(40% 50% at 85% 90%, rgba(61, 230, 255, .18), transparent 70%);
+    }
+    .hero::before {            /* perspective grid */
+      content: "";
+      position: absolute; inset: 0; z-index: -1;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, #000 10%, transparent 85%);
+      animation: drift 14s linear infinite;
+    }
+    @keyframes drift { to { background-position: 0 48px, 48px 0; } }
+
+    .avatar-ring {
+      position: relative;
+      width: 188px; height: 188px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(from 0deg, var(--cyan), var(--violet), var(--gold), var(--cyan));
+      animation: spin 6s linear infinite;
+      box-shadow: 0 0 60px rgba(61, 230, 255, .35);
+    }
+    .avatar-ring img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--void);
+      animation: spin 6s linear infinite reverse;  
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .course-tag {
+      display: inline-block;
+      padding: .35rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .hero h1 {
+      font-weight: 700;
+      font-size: clamp(2rem, 5.5vw, 3.8rem);
+      line-height: 1.1;
+      background: linear-gradient(100deg, #fff 20%, var(--cyan) 60%, var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .student-id {
+      display: inline-flex; align-items: center; gap: .6rem;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+    .student-id::before {
+      content: "";
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #3dff9a;
+      box-shadow: 0 0 12px #3dff9a;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { opacity: .35; } }
+
+    .section-title { font-weight: 700; font-size: clamp(1.5rem, 3.5vw, 2.3rem); }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 72px; height: 3px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 14px var(--cyan);
+      border-radius: 3px;
+    }
+    .project-zone {
+      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, .09) 30%, rgba(61, 230, 255, .06) 100%);
+      border-top: 1px solid var(--line);
+    }
+
+    .tech-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line) !important;
+      border-radius: 18px;
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .tech-card::before {         /* cursor-following glow */
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgba(61, 230, 255, .16), transparent 60%);
+      opacity: 0;
+      transition: opacity .25s ease;
+      pointer-events: none;
+    }
+    .tech-card:hover { transform: translateY(-6px); border-color: var(--cyan) !important; }
+    .tech-card:hover::before { opacity: 1; }
+    .tech-card h3 { font-size: 1.1rem; line-height: 1.4; }
+
+    .tech-card .badge {
+      background: rgba(61, 230, 255, .12) !important;
+      color: var(--cyan) !important;
+      border: 1px solid rgba(61, 230, 255, .4);
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+    }
+    .project-zone .tech-card .badge {
+      background: rgba(242, 193, 78, .12) !important;
+      color: var(--gold) !important;
+      border-color: rgba(242, 193, 78, .45);
+    }
+    .btn-glow {
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .03);
+      font-weight: 700;
+      transition: background .25s ease, box-shadow .25s ease, color .25s ease;
+    }
+    .tech-card:hover .btn-glow {
+      color: #04101a;
+      background: var(--cyan);
+      box-shadow: 0 0 22px rgba(61, 230, 255, .6);
+    }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); background: #04060d; }
+
+    a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="avatar-ring">
+        <img src="gambarr.png" alt="Student photo">
+      </div>
+      <p class="mb-4"><span class="course-tag">TTTM2113 – Web Development</span></p>
+      <h1 class="mb-4">Web Programming<br>Deliverables</h1>
+      <p class="student-id mb-0">A219191 – MUHAMMAD NAJIB BIN BASIRON</p>
+    </div>
+  </header>
+
+  <!-- WEEKLY LABS -->
+  <main class="container py-5 my-4">
+    <div class="text-center mb-5">
+      <h2 class="section-title mb-4">Weekly Labs</h2>
+      <p class="lead text-body-secondary mb-0">Practical exercises and activities throughout the course</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-1</span>
+        <h3 class="fw-bold">Basic HTML</h3>
+        <p class="text-body-secondary">Introduction to HTML elements and document structure.</p>
+        <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-1/" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-2</span>
+        <h3 class="fw-bold">HTML Forms</h3>
+        <p class="text-body-secondary">Creating forms and collecting user input with HTML.</p>
+        <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-2/" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card tech-card h-100">
+    <div class="card-body p-4 d-flex flex-column bg-transparent">
+      <span class="badge mb-3 align-self-start">Lab-3</span>
+      <h3 class="fw-bold">Cascading Style Sheet</h3>
+      <p class="text-body-secondary">Designing and styling web pages using CSS.</p>
+
+      <div class="d-flex flex-wrap gap-3 mt-auto">
+        <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-3/content.php"
+           class="btn btn-glow stretched-link">Open Task (CSS) →</a>
+
+        <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-3/biodata.php"
+           class="btn btn-glow position-relative"
+           style="z-index: 2;">Open Task (Form) →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-4</span>
+        <h3 class="fw-bold">Bootstrap</h3>
+        <p class="text-body-secondary">Creating responsive interfaces using Bootstrap 5.</p>
+        <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-4/cv.html" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+<div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+  <span class="badge mb-3 align-self-start">Lab-5</span>
+  <h3 class="fw-bold">Basic PHP</h3>
+  <p class="text-body-secondary">Introduction to server-side programming using PHP.</p>
+  <div class="d-flex flex-wrap gap-2 mt-auto">
+    <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-5/biodata.php/" class="btn btn-glow">Open biodata.php →</a>
+    <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-5/edit_bio.php/" class="btn btn-glow">Open edit_bio.php →</a>
+    <a href="http://lrgs.ftsm.ukm.my/users/a219191/lab-5/lecturers_list.php/" class="btn btn-glow">Open lecturers_list.php →</a>
+  </div>
+</div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-6</span>
+        <h3 class="fw-bold">PHP + MySQL</h3>
+        <p class="text-body-secondary">Connecting PHP applications to a MySQL database.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-7</span>
+        <h3 class="fw-bold">MVC Framework</h3>
+        <p class="text-body-secondary">Building web applications using the Model-View-Controller pattern.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-8</span>
+        <h3 class="fw-bold">Advanced PHP</h3>
+        <p class="text-body-secondary">Developing more advanced server-side PHP applications.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-9</span>
+        <h3 class="fw-bold">JavaScript</h3>
+        <p class="text-body-secondary">Adding interaction and dynamic behaviour to web pages.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-10</span>
+        <h3 class="fw-bold">jQuery</h3>
+        <p class="text-body-secondary">Simplifying JavaScript programming using jQuery.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+      <div class="col-md-6 col-lg-4"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+        <span class="badge mb-3 align-self-start">Lab-11</span>
+        <h3 class="fw-bold">AJAX + RESTful API + JSON</h3>
+        <p class="text-body-secondary">Working with web APIs and exchanging data using JSON.</p>
+        <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open Task →</a>
+      </div></div></div>
+
+    </div>
+  </main>
+
+  <section class="project-zone py-5">
+    <div class="container py-4">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-4">Individual Project</h2>
+        <p class="lead text-body-secondary mx-auto mb-0" style="max-width: 46rem;">
+          My project is to develop a web-based back-office system
+          for a company that sells <strong class="text-white"> Camping Cookware Mess Kits</strong>.
+          My company is known as <strong class="text-white"> TrailForge</strong>. TrailForge offers durable, lightweight, and compact camping cookware mess kits designed for outdoor adventures. Perfect for camping, hiking, and travelling, our products make cooking outdoors easy and convenient.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-xl-3"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+          <span class="badge mb-3 align-self-start">Project Task 1</span>
+          <h3 class="fw-bold">HTML+CSS</h3>
+          <p class="text-body-secondary">Develop the initial interface and page structure for the project.</p>
+          <a href="http://lrgs.ftsm.ukm.my/users/a219191/pt1/home.php" target="_blank" class="btn btn-glow stretched-link mt-auto align-self-start">Open →</a>
+        </div></div></div>
+
+        <div class="col-md-6 col-xl-3"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+          <span class="badge mb-3 align-self-start">Project Task 2</span>
+          <h3 class="fw-bold">PHP + Database + MVC</h3>
+          <p class="text-body-secondary">Implement server-side functionality and database operations.</p>
+          <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open →</a>
+        </div></div></div>
+
+        <div class="col-md-6 col-xl-3"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+          <span class="badge mb-3 align-self-start">Project Task 3</span>
+          <h3 class="fw-bold">JavaScript + AJAX</h3>
+          <p class="text-body-secondary">Improve usability and responsiveness with JavaScript and AJAX.</p>
+          <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open →</a>
+        </div></div></div>
+
+        <div class="col-md-6 col-xl-3"><div class="card tech-card h-100"><div class="card-body p-4 d-flex flex-column bg-transparent">
+          <span class="badge mb-3 align-self-start">Final</span>
+          <h3 class="fw-bold">Final Enhancement</h3>
+          <p class="text-body-secondary">Complete the system and add meaningful enhancements to the project.</p>
+          <a href="#" class="btn btn-glow stretched-link mt-auto align-self-start">Open →</a>
+        </div></div></div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4">
+    <div class="container">
+      <p class="fw-semibold mb-1">TTTM2113 Web Development</p>
+      <p class="text-body-secondary mb-0">Copyright © 2026 Muhammad Najib</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Cursor-following glow on cards
+    document.querySelectorAll('.tech-card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  </script>
+</body>
+</html>
