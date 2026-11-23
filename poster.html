@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amanah atau Angka? – Poster A4 Tabung Haji</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+:root{--bk:#080d0b;--y:#f2b705;--y2:#ffd45a;--red:#d12f2f;--gr:#2f9a62;--ivory:#ece6d4;--cream:#efe7d2;--ink:#1d1b16;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:#020403;font-family:'Public Sans',system-ui,'Segoe UI',Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{margin:0 auto;overflow:hidden;width:794px;height:1123px}
+.poster{width:794px;height:1123px;transform-origin:0 0;position:relative;overflow:hidden;color:var(--ivory);padding:12px 26px 22px;display:flex;flex-direction:column;gap:7px;
+background:radial-gradient(ellipse 70% 38% at 78% 12%,rgba(242,183,5,.16),transparent 70%),radial-gradient(ellipse 120% 90% at 50% 50%,#0f1f19 0%,#080d0b 70%,#030504 100%)}
+.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.poster>*:not(.fx){position:relative;z-index:1}
+h1,h2,.num{font-family:Anton,Impact,'Arial Narrow',sans-serif;font-weight:400;margin:0}
+.logos{height:34px;flex:none}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hero h1{font-size:60px;white-space:nowrap;line-height:.95;letter-spacing:.01em;text-transform:uppercase;color:var(--ivory);text-shadow:0 3px 0 rgba(0,0,0,.6)}
+.hero h1 span{color:var(--y)}
+.hero h1 i{font-style:normal;color:var(--red)}
+.sub{font-family:'Special Elite','Courier New',monospace;font-size:12.5px;line-height:1.3;margin:8px 0 0;color:var(--ivory);letter-spacing:.02em}
+.quote{margin:7px 0 0;padding:4px 10px;background:var(--y);color:#111;font-family:Anton,Impact,sans-serif;font-size:13px;letter-spacing:.04em;transform:rotate(-.8deg);box-shadow:3px 3px 0 #000;display:inline-block}
+.scene{width:118px;height:118px;flex:none}
+.tape{flex:none;height:10px;margin:0 -26px;background:repeating-linear-gradient(-45deg,var(--y) 0 10px,#0b0b0b 10px 20px);box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.row{display:grid;gap:7px}
+.r1{grid-template-columns:1.45fr 1fr;align-items:start}
+.label{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:17px;letter-spacing:.14em;color:var(--y);margin:0 0 4px}
+.bg p{margin:0;font-size:10px;line-height:1.42;color:var(--ivory)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.stat{border:1.4px solid var(--y);padding:7px 3px;text-align:center;background:rgba(0,0,0,.45);box-shadow:3px 3px 0 rgba(209,47,47,.85)}
+.stat svg{width:16px;height:16px;stroke:var(--y);fill:none;stroke-width:1.8;display:block;margin:0 auto 3px}
+.stat b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:24px;color:var(--y2);line-height:1}
+.stat span{display:block;margin-top:4px;font-size:8px;font-weight:700;letter-spacing:.05em}
+.tl{list-style:none;margin:0;padding:15px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.tl::before{content:"";position:absolute;left:6px;right:6px;top:7px;height:0;border-top:2px solid var(--red);filter:drop-shadow(0 1px 1px #000)}
+.tl li{position:relative;font-size:10px;line-height:1.35}
+.tl li::before{content:"";position:absolute;top:-15px;left:0;width:12px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a8a,var(--red) 55%,#7a1515);box-shadow:1px 3px 3px rgba(0,0,0,.7)}
+.tl b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;color:var(--y2);margin-bottom:2px;line-height:1.05;letter-spacing:.02em}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03));border:1px solid rgba(242,183,5,.35);border-left:4px solid var(--y);padding:6px 10px 6px;position:relative;box-shadow:0 10px 22px -12px #000}
+.card h2{font-size:13.5px;letter-spacing:.06em;margin-bottom:3px;color:var(--y);display:flex;align-items:center;gap:7px}
+.card h2 svg{flex:none;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2}
+.card p,.card li{font-size:10px;line-height:1.38;margin:0}
+.card ol,.card ul{margin:0;padding-left:16px}
+.card li{margin-bottom:2px;padding-left:2px}
+.card li::marker{font-family:Anton,Impact,sans-serif;color:var(--y)}
+.ev{background:linear-gradient(180deg,#f3ecd8,#e6dcc0);color:var(--ink);border:0;border-top:3px solid #b9ae8e;transform:rotate(-.5deg);box-shadow:0 8px 16px -8px #000}
+.ev.b{transform:rotate(.45deg)}
+.ev h2{color:#6b1414}
+.ev li::marker{color:#a02222}
+.ev::after{content:"";position:absolute;top:-8px;left:50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a8a,var(--red) 55%,#7a1515);box-shadow:1px 3px 3px rgba(0,0,0,.6)}
+.cap{font-size:9.2px!important;margin-bottom:4px!important;color:#4a463a}
+.bars{display:grid;grid-template-columns:3.4fr 1.4fr;gap:3px;align-items:end}
+.bar{height:28px;display:flex;align-items:center;padding:0 8px;font-family:Anton,Impact,sans-serif;font-size:17px;letter-spacing:.03em;color:#fff}
+.bar.g{background:#1f6b45}.bar.r{background:var(--red)}
+.bl{font-size:9.5px;margin-top:4px;color:#3a362b}
+.bl.r{color:#a02222;font-weight:700}
+.hib{margin-bottom:6px}
+.hib small{display:block;font-size:9.6px;margin-bottom:2px;font-weight:600}
+.hib div{height:21px;display:flex;align-items:center;padding:0 8px;font-family:Anton,Impact,sans-serif;font-size:16px;letter-spacing:.03em;color:#fff}
+.h1{width:35.7%;background:var(--red)}.h2{width:100%;background:var(--gr)}
+.coins{position:absolute;right:10px;top:8px;width:46px;height:36px}
+.gav{position:absolute;right:8px;bottom:6px;width:38px;height:38px;opacity:.16}
+.r2,.r3{grid-template-columns:1fr 1fr}
+.r4{grid-template-columns:1fr 1.7fr}
+.theory p{margin-bottom:3px!important}
+.theory b{color:var(--y2)}
+.rec ol{display:grid;grid-template-columns:1fr 1fr;gap:2px 22px;padding-left:20px}
+.rec li{font-weight:600;font-size:10.4px;line-height:1.33}
+.team li{font-size:8.8px;font-weight:600;margin-bottom:1px;line-height:1.28}
+.refs li{font-size:8.2px;line-height:1.3;margin-bottom:2px;word-break:break-word}
+.refs li::marker{content:"■  ";color:#a02222}
+.foot{position:absolute;left:0;right:0;bottom:0;margin:0}
+@media print{body{background:none}.wrap{width:210mm;height:297mm}.poster{transform:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="poster">
+<svg class="fx" aria-hidden="true">
+<defs><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/></filter>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd45a" stop-opacity=".22"/><stop offset="1" stop-color="#ffd45a" stop-opacity="0"/></linearGradient></defs>
+<polygon points="640,0 700,0 900,700 360,700" fill="url(#beam)"/>
+<g fill="none" stroke="#f2b705" stroke-width="1.6" opacity=".07" transform="translate(120 960)">
+<ellipse rx="150" ry="190"/><ellipse rx="130" ry="168"/><ellipse rx="110" ry="146" stroke-dasharray="40 6"/><ellipse rx="90" ry="124" stroke-dasharray="60 8"/><ellipse rx="70" ry="102"/><ellipse rx="50" ry="80" stroke-dasharray="30 5"/><ellipse rx="30" ry="56"/><ellipse rx="12" ry="30"/></g>
+<text x="560" y="640" font-family="Anton,Impact,sans-serif" font-size="520" fill="#fff" opacity=".025">?</text>
+<rect width="100%" height="100%" filter="url(#n)" opacity=".09"/>
+</svg>
+
+<div class="logos" aria-hidden="true"></div>
+
+<header class="hero">
+<div>
+<h1>AMANAH <span>ATAU ANGKA</span><i>?</i></h1>
+<p class="sub">PENGAJARAN TADBIR URUS DARIPADA KES TABUNG HAJI</p>
+<p class="quote">“DANA JEMAAH IALAH AMANAH, BUKAN SEKADAR PORTFOLIO”</p>
+</div>
+<svg class="scene" viewBox="0 0 150 150" aria-hidden="true">
+<defs><linearGradient id="sp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd45a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd45a" stop-opacity=".04"/></linearGradient></defs>
+<polygon points="75,0 105,0 140,128 40,128" fill="url(#sp)"/>
+<ellipse cx="85" cy="130" rx="52" ry="7" fill="rgba(255,212,90,.25)"/>
+<polygon fill="#3a3a3a" points="50,62 78,53 128,53 100,62"/>
+<polygon fill="#0b0b0b" stroke="#333" points="50,62 100,62 100,122 50,122"/>
+<polygon fill="#171717" stroke="#333" points="100,62 128,53 128,111 100,122"/>
+<rect x="50" y="72" width="50" height="8" fill="#d4a73c"/>
+<polygon fill="#a8832a" points="100,72 128,63 128,71 100,80"/>
+<rect x="64" y="94" width="12" height="28" fill="#f0cf7a"/>
+<path fill="#ffd45a" d="M70 8a13 13 0 1 0 0 25a10.5 10.5 0 1 1 0-25z"/>
+<polygon fill="#ffd45a" points="90,14 92,20 98,20 93,24 95,30 90,26 85,30 87,24 82,20 88,20"/>
+<g transform="translate(6 70) rotate(-12)"><circle cx="26" cy="26" r="24" fill="rgba(255,255,255,.1)" stroke="#f2b705" stroke-width="5"/><path d="M12 18a16 16 0 0 1 12-9" stroke="#fff" stroke-width="2.5" fill="none" opacity=".6"/><rect x="42" y="42" width="8" height="34" rx="3" fill="#8a5a24" transform="rotate(-45 46 46)" transform-origin="46 46"/></g>
+</svg>
+</header>
+<div class="tape"></div>
+
+<section class="row r1 bg">
+<div>
+<h2 class="label">LATAR BELAKANG</h2>
+<p>Lembaga Tabung Haji (TH) mengurus simpanan bakal jemaah haji dan melabur dananya. Suruhanjaya Siasatan Diraja (RCI) menyiasat pengurusan dan operasinya bagi tempoh 2014 hingga 2020, dan laporan penuhnya didedahkan kepada umum pada 29 Julai 2026.</p>
+</div>
+<div class="stats">
+<div class="stat"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M16 4.5a3.5 3.5 0 010 7M18 14c2.5.6 4 2.4 4 6"/></svg><b>9.7J</b><span>PENDEPOSIT</span></div>
+<div class="stat"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></svg><b>211</b><span>HALAMAN LAPORAN</span></div>
+<div class="stat"><svg viewBox="0 0 24 24"><path d="M4 6l2 2 3-3M4 14l2 2 3-3M12 7h8M12 15h8"/></svg><b>25</b><span>SYOR RCI</span></div>
+</div>
+</section>
+
+<section>
+<h2 class="label" style="margin-bottom:2px">GARIS MASA</h2>
+<ol class="tl">
+<li><b>2024-17</b>Hibah tinggi melebihi kemampuan kewangan TH</li>
+<li><b>2017</b>Krisis kewangan; penyata tidak mencerminkan kerugian sebenar</li>
+<li><b>2018</b>Hibah hanya 1.25%</li>
+<li><b>2025</b>Pulih: pendapatan pelaburan RM4.64 bilion, hibah 3.5%</li>
+<li><b>Jul 2026</b>Laporan RCI didedahkan kepada umum</li>
+</ol>
+</section>
+
+<section class="row r2">
+<article class="card">
+<h2><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>ISU PELABURAN</h2>
+<ol>
+<li>Pelaburan dibuat di bawah visi “tonggak ekonomi ummah”, walaupun TH kekurangan kepakaran dalam perladangan berskala besar dan hartanah.</li>
+<li>Beberapa pelaburan anak syarikat mengalami kerugian dan menjejaskan prestasi keseluruhan TH.</li>
+<li>RCI mengesyorkan audit forensik terhadap 14 pelaburan.</li>
+</ol>
+</article>
+<article class="card">
+<h2><svg viewBox="0 0 24 24"><path d="M12 3l9 4H3l9-4zM5 10v8M10 10v8M14 10v8M19 10v8M3 21h18"/></svg>ISU TADBIR URUS</h2>
+<ol>
+<li>Akta Tabung Haji 1995 memberi kuasa terlalu luas kepada Menteri.</li>
+<li>Penglibatan ahli politik dalam pengurusan TH pada 2014-2018 menimbulkan keresahan masyarakat.</li>
+<li>"Perakaunan kreatif" serta kelemahan pengawasan kawal selia dan audit.</li>
+</ol>
+</article>
+</section>
+
+<section class="row r3">
+<article class="card ev">
+<h2><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></svg>PENYATA KEWANGAN 2017</h2>
+<p class="cap">Untung dilaporkan lawan keputusan sepatutnya menurut RCI</p>
+<div class="bars">
+<div class="bar g">RM3.4b</div><div class="bar r">- RM1.4b</div>
+<div class="bl">untung dilaporkan</div><div class="bl r">kerugian sepatutnya</div>
+</div>
+</article>
+<article class="card">
+<h2><svg viewBox="0 0 24 24"><path d="M4 20V14M10 20V10M16 20V6M22 20H2"/></svg>HIBAH KEPADA PENDEPOSIT</h2>
+<svg class="coins" viewBox="0 0 46 36" aria-hidden="true"><g fill="#d4a73c" stroke="#7a5c14" stroke-width="1"><ellipse cx="14" cy="30" rx="12" ry="4"/><ellipse cx="14" cy="25" rx="12" ry="4"/><ellipse cx="14" cy="20" rx="12" ry="4"/><ellipse cx="33" cy="30" rx="12" ry="4"/><ellipse cx="33" cy="25" rx="12" ry="4"/><ellipse cx="33" cy="20" rx="12" ry="4" fill="#f0cf7a"/><ellipse cx="14" cy="15" rx="12" ry="4" fill="#f0cf7a"/></g></svg>
+<div class="hib"><small>2018</small><div class="h1">1.25%</div></div>
+<div class="hib" style="margin-bottom:0"><small>2025</small><div class="h2">3.5%</div></div>
+</article>
+</section>
+
+<section class="row r3">
+<article class="card ev b">
+<h2><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/></svg>FAKTA VS PERSEPSI</h2>
+<p style="margin-bottom:5px">RCI menyatakan krisis berpunca daripada kelemahan tadbir urus dan pengurusan, dan tidak membuat dapatan salah guna kuasa oleh mana-mana individu, walaupun transaksi mencurigakan dikenal pasti.</p>
+<p>Siasatan SPRM berterusan dan seorang bekas menteri telah dibawa ke mahkamah. Setiap pihak kekal tidak bersalah sehingga mahkamah memutuskan.</p>
+<svg class="gav" viewBox="0 0 24 24" fill="#1d1b16"><rect x="3" y="3" width="12" height="6" rx="1" transform="rotate(45 9 6)"/><rect x="10" y="10" width="4" height="13" rx="1" transform="rotate(-45 12 16)"/></svg>
+</article>
+<article class="card theory">
+<h2><svg viewBox="0 0 24 24"><path d="M12 3v18M6 21h12M4 7h16M4 7l-3 7a3 3 0 006 0L4 7zM20 7l-3 7a3 3 0 006 0l-3-7z"/></svg>ANALISIS TEORI</h2>
+<p><b>Masalah agensi:</b> pengurus bertindak bagi pihak pendeposit, tetapi kepentingan tidak semestinya sejajar.</p>
+<p><b>Konflik kepentingan:</b> pelantikan dan keputusan dipengaruhi pertimbangan politik.</p>
+<p><b>Tanggungjawab fidusiari:</b> dana amanah mesti diutamakan di atas segala-galanya.</p>
+</article>
+</section>
+
+<section>
+<article class="card rec" style="border-left-color:var(--red)">
+<h2><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM8.5 12l2.5 2.5 4.5-5"/></svg>PENGAJARAN &amp; SYOR</h2>
+<ol>
+<li>Pinda Akta 535 dan hadkan kuasa menteri.</li>
+<li>Larang ahli politik aktif memegang jawatan kepimpinan TH.</li>
+<li>Kanunkan Panel Pelaburan, Jawatankuasa Penasihat Syariah dan Jawatankuasa Pengurusan Haji dalam Akta.</li>
+<li>Isytihar agihan keuntungan hanya berdasarkan penyata kewangan yang telah diaudit.</li>
+</ol>
+</article>
+</section>
+
+<section class="row r4">
+<article class="card team">
+<h2><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M16 4.5a3.5 3.5 0 010 7M18 14c2.5.6 4 2.4 4 6"/></svg>KUMPULAN 6</h2>
+<ol>
+<li>MUHAMMAD NAJIB BIN BASIRON (A219191)</li>
+<li>MUHAMMAD HAZIQ BIN SARIZAN (A219143)</li>
+<li>AMMAR KHALISH BIN KHAIRI (A220026)</li>
+<li>ZARUL HISYAM BIN ZAINAL ABIDIN (A218805)</li>
+<li>NURUL ARISA BINTI ADNAN (A218433)</li>
+<li>AHMAD BAIHAQI BIN DA'RAZAKI (A220054)</li>
+<li>MUHAMMAD DANIAL HARIZ BIN JOHARI (A217087)</li>
+<li>MUHAMMAD YUSUF BIN REZUAN (A219734)</li>
+<li>HARIS AIMAN BIN RAZMI (A217138)</li>
+<li>MUHAMMAD IRSYAD IRFAN BIN MOHD RAMLI (A218834)</li>
+</ol>
+</article>
+<article class="card ev refs">
+<h2><svg viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v12a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v12a2 2 0 012-2h6z"/></svg>RUJUKAN</h2>
+<ul>
+<li>Suruhanjaya Siasatan Diraja (RCI) Tabung Haji. (2026, Julai 29). Laporan Suruhanjaya Siasatan Diraja mengenai Pengurusan dan Operasi Lembaga Tabung Haji (2014-2020).</li>
+<li>Lembaga Tabung Haji. (2026, Mac 18). Kenyataan media agihan keuntungan Lembaga Tabung Haji bagi tahun kewangan 2025.</li>
+<li>The Edge Malaysia. (2026, Ogos 27). Kupasan utama: Membongkar penyelamatan RM19.9 bilion Tabung Haji. https://theedgemalaysia.com/node/815038</li>
+<li>Malay Mail. (2026, Ogos 11). Ringkasan: Laporan RCI Tabung Haji dan perkara yang dinyatakan. https://www.malaymail.com/news/malaysia/2026/08/11/7am-omla-simplified-the-tabung-haji-rci-report-and-what-it-said/230872</li>
+</ul>
+</article>
+</section>
+<div class="tape foot"></div>
+</main></div>
+<script>
+(function(){var p=document.querySelector('.poster'),w=document.querySelector('.wrap');
+function fit(){var s=Math.min(1,window.innerWidth/794);p.style.transform='scale('+s+')';w.style.width=(794*s)+'px';w.style.height=(1123*s)+'px'}
+fit();window.addEventListener('resize',fit)})();
+</script>
+</body>
+</html>
