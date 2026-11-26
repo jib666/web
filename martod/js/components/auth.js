@@ -21,8 +21,8 @@
         root.hidden = false; root.className = 'portal';
         let attempts = 0, locked = false, busy = false;
 
-        const user = h('input', { id: 'au_user', name: 'user', type: 'text', autocomplete: 'off', spellcheck: 'false', placeholder: 'NAMA PENGGUNA (APA SAHAJA)', maxlength: 24 });
-        const pass = h('input', { id: 'au_pass', name: 'pass', type: 'password', autocomplete: 'off', placeholder: 'KATA LALUAN (APA SAHAJA)' });
+        const user = h('input', { id: 'au_user', name: 'user', type: 'text', autocomplete: 'off', spellcheck: 'false', placeholder: 'NAMA PENGGUNA', maxlength: 24 });
+        const pass = h('input', { id: 'au_pass', name: 'pass', type: 'password', autocomplete: 'off', placeholder: 'KATA LALUAN' });
         const status = h('div', { class: 'auth__status', 'aria-live': 'polite' }, 'MENUNGGU KREDENSIAL');
         const submit = h('button', { class: 'btn btn--primary btn--xl', type: 'submit' }, M.icon('lock', 16), 'MASUK ARKIB');
         const levels = h('div', { class: 'levels', role: 'radiogroup', 'aria-label': 'Tahap capaian' },
