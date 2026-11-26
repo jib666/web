@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MARTOD — Sang Lagenda · Arkib Sejarah</title>
+<meta name="theme-color" content="#050706">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050706'/%3E%3Cpath d='M7 24V8l9 10 9-10v16' fill='none' stroke='%23e0302b' stroke-width='3'/%3E%3C/svg%3E">
+<!-- Optional web fonts. If offline the stylesheet falls back to system fonts. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/effects.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/views.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="fx-on">
+
+<!-- shared SVG filter: rough ink edge for stamps -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+  </filter>
+</svg>
+
+<!-- screen effect layers -->
+<div class="fx-layer fx-grain" aria-hidden="true"></div>
+<div class="fx-layer fx-scan" aria-hidden="true"></div>
+<div class="fx-layer fx-roll" aria-hidden="true"></div>
+<div class="fx-layer fx-vignette" aria-hidden="true"></div>
+
+<div id="boot" class="boot" hidden></div>
+<div id="portal" class="portal" hidden></div>
+<div id="app" class="app" hidden></div>
+<div id="overlays"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<noscript><p style="padding:2rem;color:#e0302b;font-family:monospace">MARTOD memerlukan JavaScript.</p></noscript>
+
+<!-- data (edit fail ini untuk mengisi arkib) -->
+<script src="js/data/archive-data.js"></script>
+<!-- core -->
+<script src="js/core/dom.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/fx.js"></script>
+<script src="js/core/schemas.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/core/md.js"></script>
+<!-- components -->
+<script src="js/components/figure.js"></script>
+<script src="js/components/paper.js"></script>
+<script src="js/components/preview.js"></script>
+<script src="js/components/docviewer.js"></script>
+<script src="js/components/terminal.js"></script>
+<script src="js/components/boot.js"></script>
+<script src="js/components/auth.js"></script>
+<script src="js/components/shell.js"></script>
+<!-- views -->
+<script src="js/views/_common.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/documents.js"></script>
+<script src="js/views/records.js"></script>
+<script src="js/views/evidence.js"></script>
+<script src="js/views/timeline.js"></script>
+<script src="js/views/logs.js"></script>
+<!-- start -->
+<script src="js/main.js"></script>
+</body>
+</html>
