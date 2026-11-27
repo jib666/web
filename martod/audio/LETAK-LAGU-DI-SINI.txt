@@ -1,0 +1,14 @@
+LETAK LAGU LATAR DI SINI
+========================
+
+Letak dua fail lagu anda dalam folder ini dengan nama:
+
+    lagu-1.mp3
+    lagu-2.mp3
+
+(.mp3, .m4a, .ogg atau .wav semuanya dikenali; tulis sambungan fail yang sama.)
+Selepas itu muat semula laman. Lagu akan bermula selepas pelawat log masuk, dan bertukar
+ke lagu seterusnya secara automatik (1 -> 2 -> 1 ...).
+
+Untuk menukar nama fail, tajuk atau artis, sunting bahagian  music  dalam
+js/data/archive-data.js.
